@@ -1,1 +1,93 @@
 /* You can add global styles to this file, and also import other style files */
+button.btn {
+    display: flex;
+    margin: 1rem;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+
+    &:disabled {
+        opacity: 0.5;
+    }
+
+    a {
+        width: 100%;
+        color: #FFF;
+        height: 100%;
+        padding: .5rem 1rem;
+        outline: none;
+        text-decoration: none;
+
+        &:visited {
+            color: #FFF;
+        }
+    }
+
+    &.bg-blue {
+        background: #4444c0;
+        color: #FFF;
+    }
+
+    &.bg-red {
+        background: #d33535;
+        color: #FFF;
+    }
+
+    &.bg-empty {
+        background: transparent;
+        color: #333;
+
+        a {
+            color: #333;
+        }
+    }
+}
+
+.form {
+    padding: 2rem;
+}
+
+.form-item {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: .5rem 0;
+
+    label {
+        display: grid;
+        place-items: center;
+        justify-content: flex-start;
+        flex: 1 1 300px;
+    }
+
+    input {
+        flex: 1 1 300px;
+        padding: 1rem;
+    }
+}
+
+.buttons {
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    button {
+        width: 100px;
+        padding: .5rem 1rem;
+        justify-content: center;
+        margin: 0;
+    }
+}
+
+@media(max-width: 520px) {
+    .buttons {
+        flex-direction: column-reverse;
+
+        button {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+<button class="btn bg-blue">
+  <a [routerLink]="'/clients/create'">
+    Crear Nuevo Cliente
+  </a>
+</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Fecha de nacimiento</th>
+      <th>CUIT</th>
+      <th>Dirección</th>
+      <th>Teléfono</th>
+      <th>Correo electrónico</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of clients$ | async" (click)="goToDetail(item.id)">
+      <td>{{ item.firstName }}</td>
+      <td>{{ item.lastName }}</td>
+      <td>{{ item.birthday | date }}</td>
+      <td>{{ item.CUIT }}</td>
+      <td>{{ item.address }}</td>
+      <td>{{ item.phone }}</td>
+      <td>{{ item.email }}</td>
+    </tr>
+  </tbody>
+</table>
