@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { ClientsModel } from '../models/clients.model';
-import { BehaviorSubject, Subscription, filter } from 'rxjs';
-import { NavigationEnd, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,10 +12,6 @@ export class ClientService {
   constructor(
     private http: HttpClient
   ) {}
-
-  getBackLink() {
-    return localStorage.getItem('backLink') || '/clients/list';
-  }
 
   getDetail(id: number) {
     return this.http.get<ClientsModel>('http://localhost:3000/api/clients/' + id);
